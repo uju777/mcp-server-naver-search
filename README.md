@@ -1,5 +1,9 @@
 # Naver Search MCP Server
 
+<a href="https://glama.ai/mcp/servers/@uju777/mcp-server-naver-search">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@uju777/mcp-server-naver-search/badge" />
+</a>
+
 Connecting Claude Desktop & Cursor to **Naver(Korea's #1 Search Engine)**.
 Claude에서 **네이버 쇼핑 최저가, 카페 리얼 후기, 실시간 뉴스**를 검색하세요.
 
