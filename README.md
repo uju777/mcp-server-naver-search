@@ -72,4 +72,16 @@ After restarting Claude, ask:
 
 ## License
 
-MIT
+MIT License © 2026 [uju777](https://github.com/uju777)
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contributing
+
+Issues and Pull Requests are welcome!
+
+## Author
+
+**uju777** - [GitHub](https://github.com/uju777)
