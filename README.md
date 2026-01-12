@@ -20,7 +20,10 @@ Claude에서 **네이버 쇼핑 최저가, 카페 리얼 후기, 실시간 뉴�
 - Python 3.10+
 - [Naver Developers API Key](https://developers.naver.com/apps/#/register) (Free 25,000 reqs/day)
 
-### 2. Installation (Claude Desktop)
+### 2. Installation
+
+<details>
+<summary><b>Claude Desktop</b></summary>
 
 Add this to your `claude_desktop_config.json`:
 
@@ -31,12 +34,9 @@ Add this to your `claude_desktop_config.json`:
       "command": "uv",
       "args": [
         "run",
-        "--with",
-        "mcp[cli]",
-        "--with",
-        "httpx",
-        "--with",
-        "python-dotenv",
+        "--with", "mcp[cli]",
+        "--with", "httpx",
+        "--with", "python-dotenv",
         "/YOUR/PATH/TO/mcp-server-naver-search/server.py"
       ],
       "env": {
@@ -47,6 +47,63 @@ Add this to your `claude_desktop_config.json`:
   }
 }
 ```
+
+</details>
+
+<details>
+<summary><b>Claude Code (CLI)</b></summary>
+
+Add this to your `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "naver-search": {
+      "command": "sh",
+      "args": [
+        "-c",
+        "export PATH=\"$HOME/.local/bin:$PATH\" && cd /YOUR/PATH/TO/mcp-server-naver-search && uv run --with 'mcp[cli]' --with httpx --with python-dotenv python server.py"
+      ],
+      "env": {
+        "NAVER_CLIENT_ID": "YOUR_ID",
+        "NAVER_CLIENT_SECRET": "YOUR_SECRET"
+      }
+    }
+  }
+}
+```
+
+> **Note:** Claude Code requires `sh -c` with PATH export because it doesn't inherit your shell's PATH configuration.
+
+</details>
+
+<details>
+<summary><b>Cursor</b></summary>
+
+Add this to your Cursor MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "naver-search": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with", "mcp[cli]",
+        "--with", "httpx",
+        "--with", "python-dotenv",
+        "/YOUR/PATH/TO/mcp-server-naver-search/server.py"
+      ],
+      "env": {
+        "NAVER_CLIENT_ID": "YOUR_ID",
+        "NAVER_CLIENT_SECRET": "YOUR_SECRET"
+      }
+    }
+  }
+}
+```
+
+</details>
 
 ## Usage Examples (Try these!)
 
